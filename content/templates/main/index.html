@@ -1,0 +1,23 @@
+{% include 'layouts/default/head.html' %}
+
+{% load i18n %}
+
+<div class="container-fluid mt-3">
+
+    {% if request.user.is_authenticated %}
+
+        {% trans 'You are authorized.' %}
+
+        <br>
+
+        {% trans 'Your username is' %} <b>{{ request.user.username }}</b>.
+
+    {% else %}
+
+        {% trans 'Hi Guest!' %}
+
+    {% endif %}
+
+</div>
+
+{% include 'layouts/default/foot.html' %}
